@@ -17,6 +17,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Debug environment variables
+        run: |
+          echo "DOCKER_USERNAME: $DOCKER_USERNAME"
+          echo "IMAGE_NAME: $IMAGE_NAME"
+
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
         with:
